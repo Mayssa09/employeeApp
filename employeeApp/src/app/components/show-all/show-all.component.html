@@ -1,0 +1,56 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">firstName</th>
+        <th scope="col">lastName</th>
+        <th scope="col">email</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of listOfEmployees">
+        <td>{{employee.id}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.emailId}}</td>
+        
+      </tr>
+   
+    </tbody>
+  </table>
+
+  <button (click)="showForm()">add employee</button>
+  <div *ngIf="show">
+    <form [formGroup]="employeeForm" (ngSubmit)="handleSubmit()">
+
+    <label>
+     id
+      <input type="text" formControlName="id">
+    </label>
+    <br>
+  
+    <label>
+      firstName
+          <input type="text" formControlName="firstName">
+    </label>
+    <br>
+  
+    <label>
+      lastName
+      <input type="text" formControlName="lastName">
+    </label>
+    <br>
+  
+    <label>
+      emailId
+      <input type="text" formControlName="emailId">
+    </label>
+    <br>
+  
+    <input type="submit" value="Add This employee">
+  </form></div>
+  
+
+
+  
